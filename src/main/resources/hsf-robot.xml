@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xmlns:hsf="http://www.taobao.com/hsf"
+ xmlns="http://www.springframework.org/schema/beans"
+ xsi:schemaLocation="http://www.springframework.org/schema/beans
+ http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+ http://www.taobao.com/hsf
+ http://www.taobao.com/hsf/hsf.xsd" default-autowire="byName">
+
+<!--1.	信誉额查询/押货保证金最大限额-->
+<hsf:consumer id="mortgageAccountQueryApi"
+interface="com.perfect.center.inventory.api.query.IMortgageAccountQueryApi"
+version="1.0.0" group="dtyunxi-perfect-test">
+</hsf:consumer>
+<!--2.	押货单明细查询&ndash;&gt;group="dtyunxi-perfect-test"-->
+<hsf:consumer id="mortgageOrderQueryApi" interface="com.perfect.center.inventory.api.query.IMortgageOrderQueryApi"
+version="1.0.0" group="dtyunxi-perfect-test">
+</hsf:consumer>
+<!--3.	核对产品库存(1)-->
+<hsf:consumer id="storageSnapshotQueryApi"
+interface="com.perfect.center.inventory.api.query.IStorageSnapshotQueryApi"
+version="1.0.0" group="dtyunxi-perfect-test">
+</hsf:consumer>
+
+<!--&lt;!&ndash;查询服务中心基本信息&ndash;&gt;-->
+<hsf:consumer id="perfectServiceCenterQueryApi"
+interface="com.perfect.center.shop.api.query.IPerfectServiceCenterQueryApi"
+version="1.0.0" group="dtyunxi-perfect-test">
+</hsf:consumer>
+<!--查询产品相关信息-->
+<hsf:consumer id="perfectItemQueryApi"
+interface="com.perfect.center.item.api.query.IPerfectItemQueryApi"
+version="1.0.0" group="dtyunxi-perfect-test">
+</hsf:consumer>
+<bean id="hsfProceduceQueryApi" class="com.taobao.hsf.app.spring.util.HSFSpringConsumerBean"
+init-method="init">
+<property name="interfaceName"
+value="com.perfect.third.integration.api.query.mall.IProcedureQueryApi"/>
+<property name="version" value="1.0.0"/>
+<property name="group" value="dtyunxi-perfect-test"/>
+</bean>
+<!--crm?-->
+<hsf:consumer id="memberProgressQueryApi"
+interface="com.perfect.center.progress.api.query.IMemberProgressQueryApi"
+version="1.0.0" group="dtyunxi-perfect-test">
+</hsf:consumer>
+<!--4.	查询用户电子礼券使用情况-->
+<hsf:consumer id="perfectCouponQueryApi"
+interface="com.perfect.center.promotion.api.query.IPerfectCouponQueryApi"
+version="1.0.0" group="dtyunxi-perfect-test">
+</hsf:consumer>
+
+<!--级别判断-->
+<hsf:consumer id="memberSearchApi"
+interface="com.perfect.center.member.api.IMemberSearchApi"
+version="1.0.0" group="dtyunxi-perfect-test">
+</hsf:consumer>
+<!--根据身份证信息 查询用户id-->
+<hsf:consumer id="perfectCtsUserQueryApi"
+interface="com.perfect.center.user.api.query.IPerfectCtsUserQueryApi"
+version="1.0.0" group="dtyunxi-perfect-test">
+</hsf:consumer>
+<!--根据用户id查询会员卡状态-->
+<hsf:consumer id="memberQueryApi"
+interface="com.perfect.center.member.api.query.IMemberQueryApi"
+version="1.0.0" group="dtyunxi-perfect-test">
+</hsf:consumer>
+
+<!--crm 密码相关-->
+<hsf:consumer id="memberPwdQueryApi"
+interface="com.perfect.center.member.api.query.IMemberPwdQueryApi"
+version="1.0.0" group="dtyunxi-perfect-test">
+</hsf:consumer>
+
+<hsf:consumer id="memberPwdApi"
+interface="com.perfect.center.member.api.IMemberPwdApi"
+version="1.0.0" group="dtyunxi-perfect-test">
+</hsf:consumer>
+<!--个人实时购货明细及积分-->
+<hsf:consumer id="perfectTradeItemQueryApi"
+interface="com.perfect.center.trade.api.query.IPerfectTradeItemQueryApi"
+version="1.0.0" group="dtyunxi-perfect-test">
+</hsf:consumer>
+
+<!--顾客报单查询-->
+<hsf:consumer id="perfectOrderQueryApi"
+interface="com.perfect.center.trade.api.query.IPerfectOrderQueryApi"
+version="1.0.0" group="dtyunxi-perfect-test">
+</hsf:consumer>
+<!--发短信接口-->
+<hsf:consumer id="perfectMessageApi"
+interface="com.perfect.center.message.api.IPerfectMessageApi"
+version="1.0.0" group="dtyunxi-perfect-test">
+</hsf:consumer>
+<!--库存列表查询-->
+<hsf:consumer id="itemStorageQueryApi"
+interface="com.perfect.center.inventory.api.query.IItemStorageQueryApi"
+version="1.0.0" group="dtyunxi-perfect-test">
+</hsf:consumer>
+<!--库存明细查询-->
+<hsf:consumer id="itemStorageLogQueryApi"
+interface="com.perfect.center.inventory.api.query.IItemStorageLogQueryApi"
+version="1.0.0" group="dtyunxi-perfect-test">
+</hsf:consumer>
+
+<!--库存调帐单 -3 查询组合拆分详情 -->
+<hsf:consumer id="itemBundleSplitQueryApi"
+interface="com.perfect.center.inventory.api.query.IItemBundleSplitQueryApi"
+version="1.0.0" group="dtyunxi-perfect-test">
+</hsf:consumer>
+<!--核心发放-->
+<hsf:consumer id="coreIssueApi"
+interface="com.perfect.third.integration.api.query.robot.ICoreIssueApi"
+version="1.0.0" group="dtyunxi-perfect-test">
+</hsf:consumer>
+<!--核心计酬-->
+<hsf:consumer id="corePayApi"
+interface="com.perfect.third.integration.api.query.robot.ICorePayApi"
+version="1.0.0" group="dtyunxi-perfect-test">
+</hsf:consumer>
+<hsf:consumer id="memberCardQueryApi"
+interface="com.perfect.center.member.api.query.IMemberCardQueryApi"
+version="1.0.0" group="dtyunxi-perfect-test">
+</hsf:consumer>
+<!--完美旧仓储-->
+<hsf:consumer id="hirdApi"
+interface="com.perfect.third.integration.api.query.mall.IAuthQueryApi"
+version="1.0.0" group="dtyunxi-perfect-test">
+</hsf:consumer>
+
+</beans>
