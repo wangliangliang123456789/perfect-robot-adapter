@@ -6,7 +6,7 @@
         /> -->
 
     <!--定义日志文件的存储地址和前缀名 -->
-    <property name="LOG_HOME" value="/logs"/>
+    <property name="LOG_HOME" value="/home/admin/taobao-tomcat-production-7.0.59.3/logs"/>
     <property name="LOG_PREFIX" value="info"/>
 
     <!-- 一般信息按照每天生成日志文件 -->
